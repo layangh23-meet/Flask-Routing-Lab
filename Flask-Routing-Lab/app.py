@@ -6,13 +6,15 @@ app = Flask(  # Create a flask app
     template_folder='templates',  # Name of html file folder
     static_folder='static'  # Name of directory for static files
 )
+@app.route('/')
+def mainpage():
+    return render_template("home.html")
 
-# Your code should be below
+@app.route('/product')
+def product():
+    return render_template("product.html")
 
 
-
-
-# Your code should be above
 
 if __name__ == "__main__":  # Makes sure this is the main process
     app.run(debug=True)
